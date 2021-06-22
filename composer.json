@@ -1,0 +1,19 @@
+{
+    "name": "exula/plex-playlist-sync",
+    "description": "Script to connect to a remote plex playlist, and download the files locally",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Brad Coudriet",
+            "email": "brad@exula.net"
+        }
+    ],
+    "require": {
+        "jc21/plex-api": "^1.2",
+        "vlucas/phpdotenv": "^5.3",
+        "rych/bytesize": "^1.0"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.1"
+    }
+}
