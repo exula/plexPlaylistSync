@@ -49,11 +49,9 @@ foreach($media as $download) {
         echo "[$i/$z] Downloading ".$download['filename']."...";
 
 
-
-
         $fh = fopen($finalDir . "/" . $download['filename'], 'w');
 
-        if(!$_ENV['TOUCH_ONLY']) {
+        if($_ENV['TOUCH_ONLY'] == "false") {
             $client->downloadFile($download['download'], $fh);
         } else {
             fwrite($fh, '');
