@@ -82,7 +82,7 @@ class PlexApi extends \jc21\PlexApi {
                 $fullUrl .= '?' . http_build_query($params);
             }
         }
-
+	$this->timeout = 0;
         // Setup curl array
         $curlOptArray = [
             CURLOPT_URL            => $fullUrl,
