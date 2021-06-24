@@ -33,6 +33,12 @@ foreach($media as $download)
 $bytesize = new \Rych\ByteSize\ByteSize;
 echo "Requires a total size of: ". $bytesize->format($total)."\n";
 
+
+if(substr($_ENV['SYNC_DESTINATION'], -1) == '/') {
+    $_ENV['SYNC_DESTINATION'] = substr($_ENV['SYNC_DESTINATION'], 0, -1);
+}
+
+
 foreach($media as $download) {
 
     $finalDir = $_ENV['SYNC_DESTINATION'] . $download['directory'];
@@ -42,6 +48,7 @@ foreach($media as $download) {
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $finalDir));
         }
     }
+
 
     unset($existingfiles[array_search($finalDir . "/" . $download['filename'], $existingfiles)]);
 
